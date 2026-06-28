@@ -36,7 +36,7 @@ My_FPV_Project/
 仿真演示
 完整圆形轨迹跟踪演示视频  
 [视频1](6Video/camara_track_circle.mp4)  
-[视频2]6Video/drone_greenbox_track.mp4)  
+[视频2](6Video/drone_greenbox_track.mp4)  
 ![运行截图](5Pitcture/gazebo仿真.jpg)
 真机演示
 ![运行截图](5Pitcture/追踪测试.jpg)
@@ -53,5 +53,29 @@ My_FPV_Project/
   cmake .. -DBUILD_GSTREAMER_PLUGIN=OFF -DMAVLINK_INCLUDE_DIRS=/root/mavlink
   make -j$(nproc)
   ```
+- **软件飞控代码/3Simulink_Gazebo/Flight_controller/下的CMakeLists.txt依赖路径更改**
+  - 修改sitl_gazebo/build路径为你的文件路径
+  ```CMake
+  set(SITL_GAZEBO_BUILD 你的sitl_gazebo/build绝对路径)
+  ```
+  - 修改mavlink文件路径为你下载的mavlink路径
+  ```CMake
+  include_directories(
+    ...
+    下载的mavlink路径/c_library_v2   # MAVLink 根目录
+  )
+  ```
+- **修改/3Simulink_Gazebo/Flight_controller/代码编译**
+  - 如果需要修改代码，修改完后在进入/Flight_controller/build目录编译
+  ```bash
+  cmake ..
+  make -j$(nproc)
+  ```
+  - 编译完成后，会生成flight_controller可执行文件，输入下面指令运行代码
+  ```bash
+  ./flight_controller 2>&1 | grep -v "libprotobuf ERROR"
+  ```
+
+## 代码说明
   
   
