@@ -47,7 +47,7 @@ My_FPV_Project/
   - Ubutu：由于我虚拟机Ubuntu是18.04版本，所以我用fishros一键安装指令安装了带ros2 humble版本的ubuntu 22.04环境的docker，实测可用（我这里创建了一个docker名为Suibian，输入e启动，s进入）
   - Gazebo11：直接通过sudo apt install -y ros-humble-ros-gz安装，或者手动安装，但是官方已将其从 Ubuntu 默认源中移除，需手动添加 OSRF 官方软件源才能通过 apt 安装
 - **PX4-Autopilot sitl_gazebo插件编译**
-  - 我们更改的PX4-Autopilot无人机模型是旧版本的，现在的官方源码地址是最新版，我暂时不知晓新版本会不会不兼容旧版本，这里还是推荐旧版本，下载地址：
+  - 我们更改的PX4-Autopilot无人机模型是旧版本的，现在的官方源码地址是最新版，我暂时不知晓新版本会不会不兼容旧版本，这里还是推荐旧版本，下载地址：https://pan.baidu.com/s/1lWdREVl3wx9NvbBBHS7z_w 提取码: AAAA
   - 由于模型需要PX4的动力学电机插件libgazebo_multirotor_base_plugin.so、libgazebo_motor_model.so以及传感器libgazebo_groundtruth_plugin.so、libgazebo_magnetometer_plugin.so等插件，所以需要在PX4-Autopilot/Tools/sitl_gazebo目录下创建build文件目录，用提供的4Sitl_gazebo_build/CMakeLists.txt覆盖原先的CMakeLists，然后输入命令进行编译,成功后会生成所需的插件和头文件
   ```bash
   cmake .. -DBUILD_GSTREAMER_PLUGIN=OFF -DMAVLINK_INCLUDE_DIRS=/root/mavlink
