@@ -134,8 +134,8 @@ My_FPV_Project/
 
 ## 真机介绍
 无人机图片展示
-![无人机1](5Pitcture/无人机1.jpg)
-![无人机2](5Pitcture/无人机2.jpg)
+![无人机1](6Video/video-to-gif-1.gif)
+![无人机2](6Video/video-to-gif-2.gif)
 ### 硬件组成
 - ESC电调：由四个单独的AM32电调组成，AM32配置如下：
   ![AM32电调配置](5Pitcture/AM32配置.png)
